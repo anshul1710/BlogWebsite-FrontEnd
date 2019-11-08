@@ -1,0 +1,49 @@
+<app-navbar (childEvent)="this.blog=$event"></app-navbar>
+<div class="container">
+  <div class="row" style="margin-left: 20px;margin-top: 100px;">
+    <div class="col-md-4">
+      <form class="form-inline" action="/action_page.php">
+        <div class="form-group">
+          <input type="text" class="form-control" [(ngModel)]="searchedItem" id="users" placeholder="Enter user" name="user">
+        </div>
+          <button type="submit" class="btn btn-primary mr-3" (click)="searchUser(searchedItem)">Search</button>
+      </form>
+      <h3 class="ml-5 mt-3">{{user.userName}}</h3>
+      <button type="button" class="btn btn-primary mt-3 w-75">Following</button>
+      <br>
+      <button type="button" class="btn btn-primary w-75 mt-3" routerLink="/myaccount">Edit Profile</button>
+      <div class="card mt-5" *ngFor="let s of getUser">
+        <div class="card-content">
+         <h5 class="card-body">{{s.name}}</h5>
+          <p class="ml-5">{{s.role}}</p>
+         <button class="btn btn-info ml-5 mb-2" routerLink="viewprofile">view Profile</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-7">
+      <div class="col-sm-8">
+        <div class="row">
+          <div class="col-sm-12 mt-3 card" style="margin-left: 150px;" *ngFor="let b of blog">
+            <div class="bg-white m-2 p-3 mb-4" style="background-color: #00c6ff">
+              <div class="d-flex">
+                <div>
+                  <div style="font-size: 20px;">{{b.title}}</div>
+                  <div class="font-weight text-black-50">{{blog.title}}</div>
+                </div>
+                <div class="ml-auto">
+                  <div>
+                    <small class="text-dark">{{b.date | date:'shortDate'}}</small>
+                  </div>
+                </div>
+              </div>
+              <hr style="color: #00c6ff">
+              <p class="pb-3">{{b.content}}</p>
+              <button class="btn btn-warning" routerLink="/editblog" (click)="editBlog(b)">Edit Blog</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

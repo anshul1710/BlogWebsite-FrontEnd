@@ -1,0 +1,20 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="row" style="margin-left: 30px;margin-top: 100px;">
+    <div class="col-md-4">
+      <div class="form_main">
+        <h4 class="heading"><strong>Edit</strong> Blog<span></span></h4>
+        <div class="form">
+          <form class="form-group">
+            <label class="text-secondary">Title</label>
+            <input type="text" class="txt" placeholder="{{blog.title}}" value="{{blog.title}}" name="title" [(ngModel)]="blog.title">
+            <label class="text-secondary">What's on your mind?</label>
+            <textarea placeholder="{{blog.content}}" value="{{blog.content}}" name="content" [(ngModel)]="blog.content" type="text" class="form-control txt"></textarea>
+            <button class="btn btn-primary mt-2" (click)="editBlog()">Edit Blog</button>
+            <button class="btn btn-danger ml-4 mt-2" (click)="deleteBlog()">Delete Blog</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
