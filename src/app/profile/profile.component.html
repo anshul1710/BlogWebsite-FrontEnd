@@ -2,28 +2,48 @@
 <div class="container">
   <div class="row" style="margin-left: 20px;margin-top: 100px;">
     <div class="col-md-4">
-      <form class="form-inline" action="/action_page.php">
-        <div class="form-group">
-          <input type="text" class="form-control" [(ngModel)]="searchedItem" id="users" placeholder="Enter user" name="user">
-        </div>
-          <button type="submit" class="btn btn-primary mr-3" (click)="searchUser(searchedItem)">Search</button>
-      </form>
-      <h3 class="ml-5 mt-3">{{user.userName}}</h3>
-      <button type="button" class="btn btn-primary mt-3 w-75">Following</button>
-      <br>
-      <button type="button" class="btn btn-primary w-75 mt-3" routerLink="/myaccount">Edit Profile</button>
-      <div class="card mt-5" *ngFor="let s of getUser">
-        <div class="card-content">
-         <h5 class="card-body">{{s.name}}</h5>
-          <p class="ml-5">{{s.role}}</p>
-         <button class="btn btn-info ml-5 mb-2" routerLink="viewprofile">view Profile</button>
+      <div class=" card pt-2 pl-3 pr-4tab-content profile-tab" id="myTabContent">
+        <div class=" tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+          <div class="row ">
+            <div class="col-md-6">
+              <label>UserName</label>
+            </div>
+            <div class="col-md-6">
+              <p>{{user.userName}}</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <label>Name</label>
+            </div>
+            <div class="col-md-5">
+              <p>{{temp}}</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <label>Email</label>
+            </div>
+            <div class="col-6">
+              <p>{{temp1}}</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <label>Phone</label>
+            </div>
+            <div class="col-6">
+              <p>{{temp3}}</p>
+            </div>
+          </div>
+          <button class="btn btn-warning mb-3" style="margin-left: 70px" routerLink="myaccount">Edit profile</button>
         </div>
       </div>
     </div>
-    <div class="col-md-7">
+    <div class="col-md-8">
       <div class="col-sm-8">
         <div class="row">
-          <div class="col-sm-12 mt-3 card" style="margin-left: 150px;" *ngFor="let b of blog">
+          <div class="col-sm-12 mb-3 card" style="margin-left: 150px;" *ngFor="let b of blog">
             <div class="bg-white m-2 p-3 mb-4" style="background-color: #00c6ff">
               <div class="d-flex">
                 <div>
@@ -44,6 +64,5 @@
         </div>
       </div>
     </div>
-
+    </div>
   </div>
-</div>

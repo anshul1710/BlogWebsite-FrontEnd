@@ -33,4 +33,9 @@ export class UserserviceService {
     const headers = new HttpHeaders({Authorization: sessionStorage.getItem('basicAuth')});
     return this.http.get(this.url + '/searchUser/' + searchedItem, {headers});
   }
+  public viewUser(id) {
+    const headers = new HttpHeaders({Authorization: sessionStorage.getItem('basicAuth')});
+    return this.http.get<User>(this.url + '/viewUser/' + id, {headers});
+  }
+
 }

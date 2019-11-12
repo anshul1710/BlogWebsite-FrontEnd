@@ -1,0 +1,16 @@
+
+<h1 class="text-center text-black-50">Following</h1>
+
+<div class="row m-1" >
+  <div class="col-sm-12 mb-2 p-3" *ngFor="let follow of followings" style="padding-right: 70px; padding-left: 70px;">
+    <div class="d-flex mb-4">
+      <div>
+        <h5>{{follow.following.email}}</h5>
+      </div>
+      <div class="ml-auto">
+        <button class="btn btn-info btn-sm" (click)="viewProfile(follow.following.userId)">View Profile</button>
+      </div>
+    </div>
+    <hr>
+  </div>
+</div>

@@ -52,4 +52,8 @@ export class BlogserviceService {
     const headers = new HttpHeaders({Authorization: sessionStorage.getItem('basicAuth')});
     return this.http.get(this.url + '/search/' + searchedItem, {headers});
   }
+  viewPost(id) {
+    const headers = new HttpHeaders({Authorization: sessionStorage.getItem('basicAuth')});
+    return this.http.get(this.url + '/viewBlogs/' + id, {headers});
+  }
 }

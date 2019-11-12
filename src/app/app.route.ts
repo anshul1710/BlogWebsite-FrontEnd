@@ -10,6 +10,9 @@ import {AddblogComponent} from './addblog/addblog.component';
 import {EditblogComponent} from './editblog/editblog.component';
 import {AllblogComponent} from './allblog/allblog.component';
 import {ViewprofileComponent} from './viewprofile/viewprofile.component';
+import {ConnectComponent} from './connect/connect.component';
+import {FollowerComponent} from './follower/follower.component';
+import {FollowingComponent} from './following/following.component';
 
 export const MAIN_ROUTES: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -22,7 +25,15 @@ export const MAIN_ROUTES: Routes = [
   {path : 'profile', component: ProfileComponent},
   {path : 'addblog', component: AddblogComponent},
   {path : 'allblog', component: AllblogComponent},
-  {path : 'viewprofile', component: ViewprofileComponent},
+  {path : 'viewprofile/:userId', component: ViewprofileComponent},
   {path : 'editblog/:id', component: EditblogComponent},
+  {path : 'connect', component: ConnectComponent},
+  { path : 'connect',
+    component: ConnectComponent,
+    children: [
+      { path: 'followers', component: FollowerComponent},
+      { path: 'following', component: FollowingComponent}
+    ],
+   },
   {path: '**', redirectTo: 'home'}
 ];

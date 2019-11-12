@@ -16,6 +16,9 @@ import { AddblogComponent } from './addblog/addblog.component';
 import { EditblogComponent } from './editblog/editblog.component';
 import { AllblogComponent } from './allblog/allblog.component';
 import { ViewprofileComponent } from './viewprofile/viewprofile.component';
+import { ConnectComponent } from './connect/connect.component';
+import { FollowerComponent } from './follower/follower.component';
+import { FollowingComponent } from './following/following.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +35,9 @@ import { ViewprofileComponent } from './viewprofile/viewprofile.component';
     EditblogComponent,
     AllblogComponent,
     ViewprofileComponent,
+    ConnectComponent,
+    FollowerComponent,
+    FollowingComponent,
 
   ],
   imports: [
